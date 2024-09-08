@@ -46,6 +46,9 @@ describe('Sign In Form Validation',()=>{
         cy.get('input#username').type('janedoe065')
         cy.get('input#password').type('password')
         cy.get('[data-test="signin-submit"]').click()
+        cy.get('[data-test="sidenav-user-full-name"]').should('be.visible').and('contain', 'Jane D')
+        cy.get('[data-test="sidenav-username"]').should('be.visible').and('contain', 'janedoe065')
+        cy.get('[data-test="sidenav-signout"]').should('be.visible').and('contain','Logout')
     })
 
 })
